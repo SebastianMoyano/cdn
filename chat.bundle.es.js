@@ -4351,20 +4351,20 @@ const un = {
     loadPreviousSession: !0,
     chatInputKey: "chatInput",
     chatSessionKey: "sessionId",
-    defaultLanguage: "en",
+    defaultLanguage: "es",
     showWelcomeScreen: !1,
     initialMessages: [
-      "Buenos dias! 👋",
-      "Hola mi nombre es nathan. que te puedo ayudar?",
+      "¡Buenos días! 👋",
+      "Hola, soy N8N. ¿En qué puedo ayudarte?",
     ],
     i18n: {
-      en: {
-        title: "Hi there! 👋",
-        subtitle: "Start a chat. We're here to help you 24/7.",
+      es: {
+        title: "¡Hola! 👋",
+        subtitle: "Inicia un chat. Estamos aquí para ayudarte 24/7.",
         footer: "",
-        getStarted: "New Conversation",
-        inputPlaceholder: "Type your question..",
-        closeButtonTooltip: "Close chat",
+        getStarted: "Nueva conversación",
+        inputPlaceholder: "Escribe tu pregunta...",
+        closeButtonTooltip: "Cerrar chat",
       },
     },
     theme: {},
@@ -7532,8 +7532,16 @@ const Yp = { name: "mdi-openInNew", render: Jp },
           Z(),
           ce("main", ad, [
             r.$slots.header
-              ? (Z(), ce("div", ld, [Mt(r.$slots, "header")]))
-              : Fe("", !0),
+                          ? (Z(), ce("div", ld, [Mt(r.$slots, "header")]))
+                          : (Z(), ce("div", ld, [
+                              ce("div", { class: "chat-logo" }, [
+                                ce("img", { src: "URL_DE_TU_LOGO", alt: "Logo de la Empresa" })
+                              ]),
+                              ce("div", { class: "chat-default-header" }, [
+                                ce("h1", null, vn(se(e)("title"))),
+                                se(e)("subtitle") ? (Z(), ce("p", null, vn(se(e)("subtitle")), 1)) : Fe("", !0)
+                              ])
+                            ])),
             r.$slots.default
               ? (Z(),
                 ce(
