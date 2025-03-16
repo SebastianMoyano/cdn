@@ -1,15 +1,14 @@
 @charset "UTF-8";
 
 /* ==========================================================================
-   CSS Variables & Global Settings
+   Variables Globales y Configuración
    ========================================================================== */
 :root {
-  /* Chat Colors */
-  --chat--color-primary: #e74266;
-  --chat--color-primary-shade-50: #db4061;
-  --chat--color-primary-shade-100: #cf3c5c;
-  --chat--color-secondary: #20b69e;
-  --chat--color-secondary-shade-50: #1ca08a;
+  /* Tema Azul */
+  --chat--color-primary: #007BFF;         /* Azul principal */
+  --chat--color-primary-shade-50: #0069D9;  /* Sombra ligera */
+  --chat--color-primary-shade-100: #0056B3; /* Sombra oscura */
+  --chat--color-secondary: #0056B3;         /* Azul secundario */
   --chat--color-white: #ffffff;
   --chat--color-light: #f2f4f8;
   --chat--color-light-shade-50: #e6e9f1;
@@ -19,7 +18,7 @@
   --chat--color-disabled: #777980;
   --chat--color-typing: #404040;
 
-  /* Spacing & Sizing */
+  /* Espaciado, tamaños y transiciones */
   --chat--spacing: 1rem;
   --chat--border-radius: 0.25rem;
   --chat--transition-duration: 0.15s;
@@ -28,14 +27,14 @@
   --chat--textarea--height: 50px;
   --chat--heading--font-size: 2em;
 
-  /* Message Styling */
+  /* Estilos de mensajes */
   --chat--message--bot--background: var(--chat--color-white);
   --chat--message--bot--color: var(--chat--color-dark);
-  --chat--message--user--background: var(--chat--color-secondary);
+  --chat--message--user--background: var(--chat--color-primary);
   --chat--message--user--color: var(--chat--color-white);
   --chat--message--pre--background: rgba(0, 0, 0, 0.05);
 
-  /* Toggle Button */
+  /* Botón de toggle */
   --chat--toggle--background: var(--chat--color-primary);
   --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
   --chat--toggle--active--background: var(--chat--color-primary-shade-100);
@@ -44,9 +43,9 @@
 }
 
 /* ==========================================================================
-   Syntax Highlighting (Based on GitHub Theme)
+   Resaltado de Sintaxis (Tema GitHub modificado)
    ========================================================================== */
-/* Base styles for code blocks */
+/* Bloques de código */
 .n8n-chat pre code.hljs,
 pre code.hljs {
   display: block;
@@ -58,14 +57,12 @@ code.hljs {
   padding: 3px 5px;
 }
 
-/* Light theme code */
+/* Tema claro para código */
 .n8n-chat .hljs,
 .hljs {
   color: #24292e;
   background: #fff;
 }
-
-/* Specific token colors */
 .n8n-chat .hljs-doctag,
 .n8n-chat .hljs-keyword,
 .n8n-chat .hljs-meta .hljs-keyword,
@@ -138,7 +135,7 @@ code.hljs {
   background-color: #ffeef0;
 }
 
-/* Dark mode overrides for code (using data-theme attribute) */
+/* Overrides para modo oscuro (usando data-theme) */
 body[data-theme="dark"] pre code.hljs,
 body[data-theme="dark"] code.hljs {
   display: block;
@@ -221,7 +218,7 @@ body[data-theme="dark"] .hljs-deletion {
   background-color: #78191b;
 }
 
-/* Automatic dark mode (prefers-color-scheme) */
+/* Modo oscuro automático (prefers-color-scheme) */
 @media (prefers-color-scheme: dark) {
   body pre code.hljs,
   body code.hljs {
@@ -231,11 +228,11 @@ body[data-theme="dark"] .hljs-deletion {
     color: #adbac7;
     background: #22272e;
   }
-  /* (Other dark mode rules replicate the above dark theme settings) */
+  /* (Se replican las reglas anteriores para modo oscuro) */
 }
 
 /* ==========================================================================
-   Chat Message Markdown Styling
+   Estilos para Markdown de Mensajes del Chat
    ========================================================================== */
 .chat-message-markdown {
   font-size: 125%;
@@ -248,8 +245,6 @@ body[data-theme="dark"] .hljs-deletion {
 .chat-message-markdown :after {
   box-sizing: border-box;
 }
-
-/* Remove default margins for common elements */
 .chat-message-markdown body,
 .chat-message-markdown dl dl,
 .chat-message-markdown dl ol,
@@ -266,8 +261,6 @@ body[data-theme="dark"] .hljs-deletion {
 .chat-message-markdown textarea {
   margin: 0;
 }
-
-/* Basic elements */
 .chat-message-markdown hr {
   overflow: visible;
   height: 0;
@@ -291,18 +284,16 @@ body[data-theme="dark"] .hljs-deletion {
   font-family: Menlo, Consolas, "Roboto Mono", "Ubuntu Monospace", monospace;
   font-size: 1em;
 }
-
-/* Accessibility and focus styles */
 .chat-message-markdown :focus {
   outline: 3px solid var(--theme-light, hsl(0, 25%, 65%));
   outline-offset: 3px;
 }
 
 /* ==========================================================================
-   Chat Components Styling
+   Estilos de Componentes del Chat
    ========================================================================== */
 
-/* Buttons */
+/* Botón */
 .chat-button {
   display: inline-flex;
   text-align: center;
@@ -334,7 +325,7 @@ body[data-theme="dark"] .hljs-deletion {
   cursor: not-allowed;
 }
 
-/* Get Started & Footer */
+/* Sección Get Started y Footer */
 .chat-get-started {
   padding: var(--chat--spacing);
   display: flex;
@@ -353,7 +344,7 @@ body[data-theme="dark"] .hljs-deletion {
   padding: var(--chat--spacing);
 }
 
-/* File Attachments */
+/* Archivos Adjuntos */
 .chat-file {
   display: flex;
   align-items: center;
@@ -389,7 +380,7 @@ body[data-theme="dark"] .hljs-deletion {
   display: block;
 }
 
-/* Chat Input Area */
+/* Área de Entrada del Chat */
 .chat-input {
   display: flex;
   flex-direction: column;
@@ -453,7 +444,7 @@ body[data-theme="dark"] .hljs-deletion {
   color: var(--chat--color-disabled);
 }
 
-/* Chat Files Container */
+/* Contenedor de Archivos del Chat */
 .chat-files {
   display: flex;
   overflow-x: hidden;
@@ -465,7 +456,7 @@ body[data-theme="dark"] .hljs-deletion {
   padding: var(--chat--files-spacing, 0.25rem);
 }
 
-/* Chat Layout */
+/* Layout del Chat */
 .chat-layout {
   width: 100%;
   height: 100%;
@@ -475,7 +466,7 @@ body[data-theme="dark"] .hljs-deletion {
   font-family: var(--chat--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
 }
 
-/* Header */
+/* Encabezado */
 .chat-layout .chat-header {
   display: flex;
   flex-direction: column;
@@ -495,7 +486,7 @@ body[data-theme="dark"] .hljs-deletion {
   line-height: 1.8;
 }
 
-/* Chat Body & Footer */
+/* Cuerpo y Footer del Chat */
 .chat-layout .chat-body {
   background: var(--chat--body--background, var(--chat--color-light));
   flex: 1;
@@ -511,7 +502,7 @@ body[data-theme="dark"] .hljs-deletion {
   color: var(--chat--footer--color, var(--chat--color-dark));
 }
 
-/* Chat Messages */
+/* Mensajes del Chat */
 .chat-message {
   max-width: 80%;
   font-size: var(--chat--message--font-size, 1rem);
@@ -538,8 +529,6 @@ body[data-theme="dark"] .hljs-deletion {
   margin-left: auto;
   border-bottom-right-radius: 0;
 }
-
-/* Message Markdown within Chat Messages */
 .chat-message > .chat-message-markdown {
   display: block;
   box-sizing: border-box;
@@ -560,7 +549,7 @@ body[data-theme="dark"] .hljs-deletion {
   border-radius: var(--chat--border-radius);
 }
 
-/* Chat Message Actions (for hover states) */
+/* Acciones en los Mensajes (al pasar el mouse) */
 .chat-message .chat-message-actions {
   position: absolute;
   bottom: 100%;
@@ -578,7 +567,7 @@ body[data-theme="dark"] .hljs-deletion {
   opacity: 1;
 }
 
-/* Typing Animation */
+/* Animación de "typing" */
 .chat-message-typing {
   max-width: 80px;
 }
@@ -617,7 +606,7 @@ body[data-theme="dark"] .hljs-deletion {
   }
 }
 
-/* Chat Window & Toggle */
+/* Ventana del Chat y Toggle */
 .chat-window-wrapper {
   position: fixed;
   bottom: var(--chat--window--bottom, var(--chat--spacing));
@@ -663,7 +652,7 @@ body[data-theme="dark"] .hljs-deletion {
   background: var(--chat--toggle--active--background);
 }
 
-/* Transitions */
+/* Transiciones */
 .chat-window-transition-enter-active,
 .chat-window-transition-leave-active {
   transition: transform var(--chat--transition-duration) ease, opacity var(--chat--transition-duration) ease;
